@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --color-bg-primary: #0A1628;
+  --color-bg-card: #0F2040;
+  --color-bg-elevated: #162545;
+  --color-accent-amber: #F59E0B;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #8BA5C4;
+  --color-border-subtle: #1E3A5F;
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-[#0066FF] via-[#00A885] to-[#00E5FF];
+  }
+  .bg-gradient-custom {
+    @apply bg-gradient-to-br from-[#0066FF] via-[#00A885] to-[#00E5FF];
+  }
+  .border-gradient-custom {
+    /* Using box-shadow trick for gradient border to allow transparent backgrounds */
+    border: 1px solid transparent;
+    background: linear-gradient(#0A1628, #0A1628) padding-box, 
+                linear-gradient(135deg, #0066FF, #00A885, #00E5FF) border-box;
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
